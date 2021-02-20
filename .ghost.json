@@ -4,7 +4,7 @@
     "contentApiKey": "f95460fda1c4089c9ef48b04ba"
   },
   "production": {
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "https://doriin.digitalpress.blog"
+    "apiUrl": "https://doriin.digitalpress.blog",
+    "contentApiKey": "f95460fda1c4089c9ef48b04ba"
   }
 }
