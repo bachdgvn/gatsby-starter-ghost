@@ -37,6 +37,8 @@
     "eslint-plugin-react": "7.22.0"
   },
   "dependencies": {
+    "@fontsource/inter": "^4.2.1",
+    "@fontsource/lora": "^4.2.1",
     "@tryghost/helpers": "1.1.38",
     "@tryghost/helpers-gatsby": "1.0.43",
     "cheerio": "1.0.0-rc.5",
