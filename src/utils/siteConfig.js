@@ -1,6 +1,17 @@
 module.exports = {
     siteUrl: `https://gatsby.ghost.org`, // Site domain. Do not include a trailing slash!
 
+    siteOwner: {
+        name: `dorrin.269`,
+        quote: `“A beautiful life begins with a beautiful mind”`,
+        social: {
+            facebook: `https://www.facebook.com`,
+            messenger: `https://www.messenger.com`,
+            email: `thuyvan0608@gmail.com`,
+            instagram: `https://www.instgram.com`,
+        },
+    },
+
     postsPerPage: 12, // Number of posts shown on paginated pages (changes this requires sometimes to delete the cache)
 
     siteTitleMeta: `Ghost Gatsby Starter`, // This allows an alternative site title for meta data for pages.
