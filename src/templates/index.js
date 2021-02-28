@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { Layout, PostCard, Pagination } from '../components/common'
+import { Layout, ImgPostCard, PostCard, Pagination } from '../components/common'
 import { MetaData } from '../components/common/meta'
 import SiteOwner from "../components/common/SiteOwner"
 
@@ -19,12 +19,12 @@ const Index = ({ data, location, pageContext }) => {
 
     let latestPost = null
     if (posts.length > 0) {
-        latestPost = <PostCard key={posts[0].node.id} post={posts[0].node} />
+        latestPost = <ImgPostCard key={posts[0].node.id} post={posts[0].node} />
     }
 
     let secLatestPost = null
     if (posts.length > 1) {
-        secLatestPost = <PostCard key={posts[1].node.id} post={posts[1].node} />
+        secLatestPost = <ImgPostCard key={posts[1].node.id} post={posts[1].node} />
     }
 
     posts = posts.filter((item, i) => i > 1)

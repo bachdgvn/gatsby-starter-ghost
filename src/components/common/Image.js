@@ -33,10 +33,13 @@ const Image = ({ fileName, alt, style }) => (
             const image = data.images.edges.find(n => n.node.relativePath.includes(fileName))
 
             if (!image) {
-                return null
+                return (
+                    <img src="" alt=""/>
+                )
             }
+
             return (
-                <Img alt={alt} fluid={image.node.childImageSharp.fluid} style={style}/>
+                <Img alt={alt} fluid={image.node.childImageSharp.fluid} style={style}></Img>
             )
         }}
     />
@@ -45,7 +48,7 @@ const Image = ({ fileName, alt, style }) => (
 Image.propTypes = {
     fileName: PropTypes.string.isRequired,
     alt: PropTypes.string,
-    style: PropTypes.string,
+    style: PropTypes.object,
 }
 
 export default Image

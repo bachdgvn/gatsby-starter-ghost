@@ -38,6 +38,14 @@ module.exports = {
         siteUrl: process.env.SITEURL || config.siteUrl,
     },
     plugins: [
+        {
+            resolve: `gatsby-plugin-less`,
+            options: {
+                cssLoaderOptions: {
+                    camelCase: false,
+                },
+            },
+        },
         /**
          *  Content Plugins
          */
