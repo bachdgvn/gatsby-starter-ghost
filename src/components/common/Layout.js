@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { Link, StaticQuery, graphql } from 'gatsby'
@@ -11,6 +11,7 @@ import "@fontsource/inter/600.css"
 import "@fontsource/inter/700.css"
 import '../../styles/app.less'
 import Image from "./Image"
+import config from "../../utils/siteConfig"
 
 /**
 * Main layout component
@@ -22,6 +23,21 @@ import Image from "./Image"
 */
 const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
     const site = data.allGhostSettings.edges[0].node
+
+    const imgs = []
+    const social = config.siteOwner.social
+    for (const property in social) {
+        imgs.push({
+            link: social[property],
+            image: `${property}_icon.svg`,
+        })
+    }
+
+    const [menuState, setMenuState] = useState(`open`)
+
+    const toggleMenu = () => {
+        setMenuState(menuState === `open` ? `close` : `open`)
+    }
 
     return (
         <div>
@@ -45,8 +61,11 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                             : <Image fileName="ghost-icon.png"></Image>
                                         }
                                     </Link>
+                                    <div className="site-nav-menu" onClick={toggleMenu}>
+                                        <Image fileName={`menu-${menuState}.svg`}></Image>
+                                    </div>
                                 </div>
-                                <div className="site-nav-right">
+                                <div className={`site-nav-right ${menuState}`}>
                                     {/* The navigation items as setup in Ghost */}
                                     <Navigation data={site.navigation} navClass="site-nav-item" />
                                     {/* eslint-disable-next-line react/jsx-no-target-blank */}
@@ -73,10 +92,37 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2021 &mdash; Published with <a className="site-foot-nav-item" href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a>
+                                <div className="site-owner-avatar">
+                                    <div className="site-owner-avatar__inner">
+                                        <Image fileName="site_owner_avatar.png" style={{ width: 120, height: 120 }}></Image>
+                                    </div>
+                                </div>
+                                <div className="site-owner-footer-content">
+                                    <h3>
+                                        <a href="/">@{ config.siteOwner.name }</a>
+                                    </h3>
+                                    {/* eslint-disable-next-line react/no-unescaped-entities */}
+                                    <p className="typo">{config.siteOwner.quote}</p>
+
+                                    <div className="site-owner-footer-social-links">
+                                        <span className="typo">Dành một lời nhắn cho tôi qua</span>
+                                        {imgs.map(img => (
+                                            // eslint-disable-next-line react/jsx-key
+                                            <a key={img.image} href={img.link} className="social-icon" target="_blank">
+                                                <Image fileName={img.image}></Image>
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                             <div className="site-foot-nav-right">
                                 <Navigation data={site.navigation} navClass="site-foot-nav-item" />
+                                <a className="site-nav-button"
+                                    href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fdoriin.digitalpress.blog%2F"
+                                    target="_blank">
+                                    <Image fileName="feedly.svg"></Image>
+                                    <span>Feedly me</span>
+                                </a>
                             </div>
                         </div>
                     </footer>

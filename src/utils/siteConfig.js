@@ -2,13 +2,13 @@ module.exports = {
     siteUrl: `https://gatsby.ghost.org`, // Site domain. Do not include a trailing slash!
 
     siteOwner: {
-        name: `dorrin.269`,
+        name: `doriin.269`,
         quote: `“A beautiful life begins with a beautiful mind”`,
         social: {
-            facebook: `https://www.facebook.com`,
-            messenger: `https://www.messenger.com`,
+            facebook: `https://www.facebook.com/thuyvan.doriin`,
+            messenger: `https://www.messenger.com/t/thuyvan.doriin`,
             email: `thuyvan0608@gmail.com`,
-            instagram: `https://www.instgram.com`,
+            instagram: `https://www.instagram.com/doriin.269`,
         },
     },
 
