@@ -35,8 +35,8 @@ what's here to work the way you'd like it to.
     --font-serif: 'Noto Serif', serif;
     --font-mono: Menlo, Courier, monospace;
     --font-light: 300;
-    --font-normal: 400;
-    --font-medium: 500;
+    --font-normal: 500;
+    --font-medium: 600;
     --font-bold: 700;
     --font-heavy: 800;
 
@@ -133,10 +133,6 @@ video {
     font: inherit;
     font-size: 100%;
     vertical-align: baseline;
-}
-body {
-    line-height: 1;
-    font-family: "Inter", sans-serif;
 }
 ol,
 ul {
@@ -314,13 +310,14 @@ body {
     overflow-x: hidden;
     color: #3c484e;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.6em;
     font-weight: var(--font-normal);
     font-style: normal;
     letter-spacing: 0;
     text-rendering: optimizeLegibility;
     background: #fff;
+    line-height: 1;
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -565,7 +562,7 @@ h6 {
 }
 
 .post-full-content {
-    max-width: 720px;
+    max-width: 1022px;
     margin: 0 auto;
     background: #fff;
 }
@@ -575,9 +572,9 @@ h6 {
     width: 100%;
     height: 500px;
     object-fit: cover;
+    border-radius: 12px;
 }
 
-.content-body h1,
 .content-body h2,
 .content-body h3,
 .content-body h4,
@@ -600,6 +597,7 @@ h6 {
 .content-title {
     margin: 0 0 0.8em;
     font-size: 5rem;
+    font-family: var(--font-serif);
 }
 @media (max-width: 500px) {
     .content-title {
@@ -614,7 +612,7 @@ h6 {
 .content-body h2 {
     margin: 0.8em 0 0.4em 0;
     font-size: 3.2rem;
-    font-weight: var(--font-bold);
+    font-weight: var(--font-medium);
 }
 @media (max-width: 500px) {
     .content-body h2 {
@@ -625,7 +623,7 @@ h6 {
 .content-body h3 {
     margin: 0.5em 0 0.2em 0;
     font-size: 2.8rem;
-    font-weight: var(--font-bold);
+    font-weight: var(--font-medium);
 }
 @media (max-width: 500px) {
     .content-body h3 {
@@ -636,7 +634,7 @@ h6 {
 .content-body h4 {
     margin: 0.5em 0 0.2em 0;
     font-size: 2.4rem;
-    font-weight: var(--font-bold);
+    font-weight: var(--font-medium);
 }
 @media (max-width: 500px) {
     .content-body h4 {
@@ -660,13 +658,13 @@ h6 {
 .content-body h6 {
     margin: 0.5em 0 0.2em 0;
     font-size: 2.0rem;
-    font-weight: var(--font-bold);
+    font-weight: var(--font-medium);
 }
 
 .content-body figure {
     margin: 0.4em 0 1.6em;
     font-size: 2.8rem;
-    font-weight: var(--font-bold);
+    font-weight: var(--font-medium);
 }
 
 .content-body pre {
@@ -749,14 +747,12 @@ h6 {
 }
 
 .site-nav-item {
-    font-weight: var(--font-medium);
     display: inline-block;
-    padding: 5px 5px;
+    padding: 5px 8px;
     margin-right: 18px;
     border-radius: var(--radius);
     border: solid 1px var(--color-border);
-    color: var(--color-base);
-    opacity: 0.8;
+    color: var(--color-secondary);
 }
 
 .site-nav-item:hover {
@@ -765,10 +761,10 @@ h6 {
 }
 
 .site-nav-button {
-    font-weight: var(--font-medium);
+    font-family: var(--font-serif);
     display: inline-flex;
     align-items: center;
-    padding: 5px 10px;
+    padding: 6px 10px;
     border-radius: var(--radius);
     border: none;
     color: var(--color-base);
@@ -1182,7 +1178,7 @@ h6 {
     margin-left: -50px;
     text-align: center;
     color: var(--color-secondary);
-    font-size: 1.3rem;
+    font-size: 2rem;
 }
 
 
@@ -1191,7 +1187,7 @@ h6 {
 
 .site-foot {
     padding: 40px 0;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     background: var(--color-bg);
 }
 
@@ -1199,6 +1195,7 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: var(--color-secondary);
     .site-foot-nav-left {
         display: flex;
         align-items: center;
@@ -1210,14 +1207,15 @@ h6 {
             margin-right: 30px;
         }
         .site-owner-footer-content {
-            a {
+            h3 > a {
+                font-size: 2.2rem;
+                font-weight: var(--font-medium);
                 color: var(--color-base);
             }
-            p{
-                font-weight: var(--font-medium);
-            }
             span{
+                font-size: 1.6rem;
                 margin-right: 7px;
+                font-style: italic;
             }
             .social-icon{
                 margin: 0 7px;
@@ -1234,6 +1232,7 @@ h6 {
         margin-left: 18px;
         margin-bottom: 12px;
         float: right;
+        font-family: var(--font-serif);
     }
     .site-nav-button{
         float: right;
