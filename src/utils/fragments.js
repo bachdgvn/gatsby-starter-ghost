@@ -54,7 +54,7 @@ export const ghostPostFields = graphql`
 
         # Dates formatted
         created_at_pretty: created_at(formatString: "DD MMMM, YYYY")
-        published_at_pretty: published_at(formatString: "DD MMMM, YYYY")
+        published_at_pretty: published_at(formatString: "YYYY-MM-DD HH:mm")
         updated_at_pretty: updated_at(formatString: "DD MMMM, YYYY")
 
         # Dates unformatted

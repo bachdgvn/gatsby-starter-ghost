@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
+import Image from "../components/common/Image";
 
 /**
 * Single post view (/:slug)
@@ -33,6 +34,9 @@ const Post = ({ data, location }) => {
                                 <img src={ post.feature_image } alt={ post.title } />
                             </figure> : null }
                         <section className="post-full-content">
+                            <span className="tag-item">
+                                { `# ` + post.primary_tag.name}
+                            </span>
                             <h1 className="content-title">{post.title}</h1>
 
                             {/* The main post content */ }
@@ -40,6 +44,19 @@ const Post = ({ data, location }) => {
                                 className="content-body load-external-scripts"
                                 dangerouslySetInnerHTML={{ __html: post.html }}
                             />
+
+                            <div className="post-footer">
+                                <span className="publish_at">
+                                    {post.published_at_pretty}
+                                </span>
+                                <span className="sep">
+                                    <Image fileName="dark-line.svg"></Image>
+                                </span>
+                                <span className="post-social-icon"></span>
+                                <span className="post-social-icon"></span>
+                                <span className="post-social-icon"></span>
+                                <span className="post-social-icon"></span>
+                            </div>
                         </section>
                     </article>
                 </div>
@@ -55,6 +72,8 @@ Post.propTypes = {
             title: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
+            primary_tag: PropTypes.string,
+            published_at_pretty: PropTypes.string,
         }).isRequired,
     }).isRequired,
     location: PropTypes.object.isRequired,
