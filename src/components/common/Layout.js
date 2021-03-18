@@ -36,7 +36,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
         })
     }
 
-    const [menuState, setMenuState] = useState(`open`)
+    const [menuState, setMenuState] = useState(`close`)
 
     const toggleMenu = () => {
         setMenuState(menuState === `open` ? `close` : `open`)

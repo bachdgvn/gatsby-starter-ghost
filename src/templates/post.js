@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet'
 
 import { Layout } from '../components/common'
 import { MetaData } from '../components/common/meta'
-import Image from "../components/common/Image";
+import Image from "../components/common/Image"
 
 /**
 * Single post view (/:slug)
@@ -52,10 +52,29 @@ const Post = ({ data, location }) => {
                                 <span className="sep">
                                     <Image fileName="dark-line.svg"></Image>
                                 </span>
-                                <span className="post-social-icon"></span>
-                                <span className="post-social-icon"></span>
-                                <span className="post-social-icon"></span>
-                                <span className="post-social-icon"></span>
+                                <a className="post-social-icon"
+                                    title="Chia sẻ lên Facebook"
+                                    target="_blank"
+                                    href={`https://www.facebook.com/sharer/sharer.php?u=${post.url}`}>
+                                    <Image fileName="facebook.svg" style={{ height: 18, width: 18 }}></Image>
+                                </a>
+                                <a className="post-social-icon"
+                                    title="Chia sẻ lên Twitter"
+                                    target="_blank"
+                                    href={`http://twitter.com/share?url=${post.url}`}>
+                                    <Image fileName="twitter.svg" style={{ height: 18, width: 18 }}></Image>
+                                </a>
+                                <a className="post-social-icon"
+                                    title="Lưu vào Pinterest"
+                                    target="_blank"
+                                    href={`http://pinterest.com/pin/create/link/?url=${post.url}`}>
+                                    <Image fileName="pinterest.svg" style={{ height: 18, width: 18 }}></Image>
+                                </a>
+                                <a className="post-social-icon"
+                                    title="Chia sẻ qua email"
+                                    href={`mailto:?subject=Hãy xem bài viết này của Doriin&amp;body=Check out this site ${post.url}.`}>
+                                    <Image fileName="gmail.svg" style={{ height: 18, width: 18 }}></Image>
+                                </a>
                             </div>
                         </section>
                     </article>
@@ -70,9 +89,10 @@ Post.propTypes = {
         ghostPost: PropTypes.shape({
             codeinjection_styles: PropTypes.object,
             title: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
             html: PropTypes.string.isRequired,
             feature_image: PropTypes.string,
-            primary_tag: PropTypes.string,
+            primary_tag: PropTypes.object,
             published_at_pretty: PropTypes.string,
         }).isRequired,
     }).isRequired,
