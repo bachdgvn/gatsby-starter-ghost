@@ -35,7 +35,7 @@ const Post = ({ data, location }) => {
                             </figure> : null
                         }
                         <section className="post-full-content">
-                            { post.primary_tag.name ?
+                            { post.primary_tag ?
                                 <span className="tag-item">
                                     { `# ` + post.primary_tag.name}
                                 </span> : null
