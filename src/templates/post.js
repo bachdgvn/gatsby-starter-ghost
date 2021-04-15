@@ -32,11 +32,14 @@ const Post = ({ data, location }) => {
                         { post.feature_image ?
                             <figure className="post-feature-image">
                                 <img src={ post.feature_image } alt={ post.title } />
-                            </figure> : null }
+                            </figure> : null
+                        }
                         <section className="post-full-content">
-                            <span className="tag-item">
-                                { `# ` + post.primary_tag.name}
-                            </span>
+                            { post.primary_tag.name ?
+                                <span className="tag-item">
+                                    { `# ` + post.primary_tag.name}
+                                </span> : null
+                            }
                             <h1 className="content-title">{post.title}</h1>
 
                             {/* The main post content */ }
