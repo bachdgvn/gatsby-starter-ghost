@@ -28,7 +28,7 @@ const PostCard = ({ post }) => {
                     <span className="in-card-author-avatar">
                         {post.primary_author.profile_image ?
                             <img className="avatar" src={post.primary_author.profile_image} alt={post.primary_author.name}/> :
-                            <img className="avatar" src="/images/icons/avatar.svg" alt={post.primary_author.name}/>
+                            <img className="avatar" src="/images/icons/avatar.png" alt={post.primary_author.name}/>
                         }
                     </span>
                     <span className="medium">{ post.primary_author.name }</span>

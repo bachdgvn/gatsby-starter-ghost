@@ -53,30 +53,30 @@ const Post = ({ data, location }) => {
                                     {post.published_at_pretty}
                                 </span>
                                 <span className="sep">
-                                    <Image fileName="dark-line.svg"></Image>
+                                    <Image fileName="dark-line.png"></Image>
                                 </span>
                                 <a className="post-social-icon"
                                     title="Chia sẻ lên Facebook"
                                     target="_blank"
                                     href={`https://www.facebook.com/sharer/sharer.php?u=${post.url}`}>
-                                    <Image fileName="facebook.svg" style={{ height: 18, width: 18 }}></Image>
+                                    <Image fileName="facebook.png" style={{ height: 18, width: 18 }}></Image>
                                 </a>
                                 <a className="post-social-icon"
                                     title="Chia sẻ lên Twitter"
                                     target="_blank"
                                     href={`http://twitter.com/share?url=${post.url}`}>
-                                    <Image fileName="twitter.svg" style={{ height: 18, width: 18 }}></Image>
+                                    <Image fileName="twitter.png" style={{ height: 18, width: 18 }}></Image>
                                 </a>
                                 <a className="post-social-icon"
                                     title="Lưu vào Pinterest"
                                     target="_blank"
                                     href={`http://pinterest.com/pin/create/link/?url=${post.url}`}>
-                                    <Image fileName="pinterest.svg" style={{ height: 18, width: 18 }}></Image>
+                                    <Image fileName="pinterest.png" style={{ height: 18, width: 18 }}></Image>
                                 </a>
                                 <a className="post-social-icon"
                                     title="Chia sẻ qua email"
                                     href={`mailto:?subject=Hãy xem bài viết này của Doriin&amp;body=Check out this site ${post.url}.`}>
-                                    <Image fileName="gmail.svg" style={{ height: 18, width: 18 }}></Image>
+                                    <Image fileName="gmail.png" style={{ height: 18, width: 18 }}></Image>
                                 </a>
                             </div>
                         </section>
