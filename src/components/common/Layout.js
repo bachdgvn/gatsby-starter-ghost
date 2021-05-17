@@ -65,7 +65,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                         }
                                     </Link>
                                     <div className="site-nav-menu" onClick={toggleMenu}>
-                                        <Image fileName={`menu-${menuState}.png`}></Image>
+                                        <Image fileName={`menu-${menuState}.svg`}></Image>
                                     </div>
                                 </div>
                                 <div className={`site-nav-right ${menuState}`}>
@@ -75,7 +75,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     <a className="site-nav-button"
                                         href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fdoriin.digitalpress.blog%2F"
                                         target="_blank">
-                                        <Image fileName="feedly.png"></Image>
+                                        <Image fileName="feedly."></Image>
                                         <span>Feedly me</span>
                                     </a>
                                 </div>
@@ -123,7 +123,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                 <a className="site-nav-button"
                                     href="https://feedly.com/i/subscription/feed%2Fhttps%3A%2F%2Fdoriin.digitalpress.blog%2F"
                                     target="_blank">
-                                    <Image fileName="feedly.png"></Image>
+                                    <Image fileName="feedly.svg"></Image>
                                     <span>Feedly me</span>
                                 </a>
                             </div>

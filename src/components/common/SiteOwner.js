@@ -8,7 +8,7 @@ const SiteOwner = () => {
     for (const property in social) {
         imgs.push({
             link: social[property],
-            image: `${property}_icon.png`,
+            image: `${property}_icon.svg`,
         })
     }
 
@@ -16,7 +16,7 @@ const SiteOwner = () => {
         <div className="site-owner-card">
             <div className="img-card-header">
                 <span className="fw-medium">ABOUT ME</span>
-                <Image fileName="dark-line.png"></Image>
+                <Image fileName="dark-line.svg"></Image>
             </div>
             <div className="site-owner-card-content">
                 <div className="site-owner-avatar">
