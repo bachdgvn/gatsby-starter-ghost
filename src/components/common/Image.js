@@ -32,17 +32,15 @@ const Image = ({ fileName, alt, style }) => (
             // Finds your image among all
             const image = data.images.edges.find(n => n.node.relativePath.includes(fileName))
 
-            if (!image) {
+            try{
+                return (
+                    <Img alt={alt} fluid={image.node.childImageSharp.fluid} style={style}></Img>
+                )
+            } catch(e) {
                 return (
                     <img src="" alt=""/>
                 )
             }
-            
-            console.log(JSON.stringify(image))
-
-            return (
-                <Img alt={alt} fluid={image.node.childImageSharp.fluid} style={style}></Img>
-            )
         }}
     />
 )
