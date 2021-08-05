@@ -24,7 +24,7 @@ const Image = ({ fileName, alt, style }) => (
         `}
         render={ (data) => {
             // Handles SVG extension
-            const extension = fileName.match(/[^\\]*\.(\w+)$/)[1]
+            const extension = (/[.]/.exec(fileName)) ? /[^.]+$/.exec(fileName) : undefined;
             if (extension === `svg`) {
                 return <img src={require(`../../images/${fileName}`)} alt={alt} style={style}/>
             }
