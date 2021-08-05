@@ -37,6 +37,8 @@ const Image = ({ fileName, alt, style }) => (
                     <img src="" alt=""/>
                 )
             }
+            
+            console.log(JSON.stringify(image))
 
             return (
                 <Img alt={alt} fluid={image.node.childImageSharp.fluid} style={style}></Img>
