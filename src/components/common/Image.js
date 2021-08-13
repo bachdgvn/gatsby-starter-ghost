@@ -23,20 +23,20 @@ const Image = ({ fileName, alt, style }) => (
           }
         `}
         render={ (data) => {
-            // Handles SVG extension
-            const extension = (/[.]/.exec(fileName)) ? /[^.]+$/.exec(fileName) : undefined;
-            if (extension === `svg`) {
-                return <img src={require(`../../images/${fileName}`)} alt={alt} style={style}/>
-            }
-
             // Finds your image among all
             const image = data.images.edges.find(n => n.node.relativePath.includes(fileName))
 
-            try{
+            try {
                 return (
                     <Img alt={alt} fluid={image.node.childImageSharp.fluid} style={style}></Img>
                 )
-            } catch(e) {
+            } catch (e) {
+                const relativePath = image.node.relativePath
+                if (relativePath.includes(`.svg`)) {
+                    return <img src={require(`../../images/${relativePath}`)} alt={alt} style={style}/>
+                }
+
+                console.log(image.node)
                 return (
                     <img src="" alt=""/>
                 )
